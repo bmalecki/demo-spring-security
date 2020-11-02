@@ -1,5 +1,6 @@
 package com.cognifide.rbac.poc.demo.endpoint;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -43,5 +44,17 @@ public class GreetingController {
     @GetMapping("/scope2")
     public String scope2(@RequestParam String scope) {
         return greetingService.getSth(scope);
+    }
+
+    @PreAuthorize("hasRole('ROLE_USER')")
+    @GetMapping("/scope3")
+    public String scope3() {
+        return "SCOPE3";
+    }
+
+    @PreAuthorize("hasRole('ROLE_GUEST')")
+    @GetMapping("/scope4")
+    public String scope4() {
+        return "GUEST";
     }
 }

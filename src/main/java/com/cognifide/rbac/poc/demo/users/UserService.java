@@ -15,8 +15,9 @@ public class UserService {
     UserService() {
         users = new HashMap<>();
         users.put("user1", new User("user1", "user1", "{noop}pass", Arrays.asList("ADMIN")));
-        users.put("user2", new User("user2", "user2", "{noop}pass", Arrays.asList("USER:scope", "USER:aaa")));
-        users.put("user3", new User("user3", "user3", "{noop}pass", Arrays.asList("USER:sth")));
+        users.put("user2", new User("user2", "user2", "{noop}pass", Arrays.asList("USER:scope", "USER:aaa", "USER")));
+        users.put("user3", new User("user3", "user3", "{noop}pass", Arrays.asList("USER:sth", "USER")));
+        users.put("user3", new User("user4", "user4", "{noop}pass", Arrays.asList("GUEST")));
     }
 
     public Optional<User> getUserById(String userId) {

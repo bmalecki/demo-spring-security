@@ -1,6 +1,9 @@
 package com.cognifide.rbac.poc.demo.config;
 
 import com.cognifide.rbac.poc.demo.users.UserService;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.access.hierarchicalroles.RoleHierarchy;
+import org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
